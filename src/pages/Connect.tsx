@@ -37,10 +37,9 @@ function Connect() {
     const test = async () => {
         try {
             const contract = getContract();
-
             const tx = await contract.A(3);
-
             const receipt = await tx.wait();
+
             console.log(receipt);
             return receipt.transactionHash;
         } catch (error) {
@@ -64,13 +63,13 @@ function Connect() {
             </div>
             <div>
                 <button type="button" onClick={handleConnect}>{active ? 'disconnect':'connect'}</button>
-                <button type="button" onClick={switchChain} disabled={(chainId == 1) || !active ? true : false} >switch</button>
+                <button type="button" onClick={switchChain} disabled={(chainId === 1) || !active ? true : false} >switch</button>
             </div>
             <div>
                 <p>Contract: 0x44274669d47Ca48b20652a1Da0a9d52B7aa89b92</p>
             </div>
             <div>
-                <button type="button" onClick={test} disabled={(chainId != 1) || !active ? true : false} >transact</button>
+                <button type="button" onClick={test} disabled={(chainId !== 1) || !active ? true : false} >transact</button>
             </div>
         </div>
     );
