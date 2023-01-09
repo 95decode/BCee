@@ -119,29 +119,6 @@ function Connect() {
                 <img src={svg11} alt="11" width="160px" height="160px" />
             </div>
             <div>
-                <h1>This page has not been opened yet.</h1>
-                <p>{typeof(account) === typeof("") ? `Connected Account : ${account}`: "Connect your wallet using Metamask"}</p>
-                <p>{(chainId !== defaultChainIdNum) && (typeof(account) === typeof("")) ? `Switch to the Ethereum main network. (current network : ${chainId})` : ""}</p>
-            </div>
-            <div>
-                <button type="button" onClick={handleConnect} style={{ width: "100px", height: "80px",}}><img src={metamask} style={{ width: "50px", height: "50px",}} alt="metamask"></img>{active ? 'Disconnect':'Connect'}</button>
-                <button type="button" onClick={switchChain} disabled={(chainId === defaultChainIdNum) || !active ? true : false} style={{ width: "100px", height: "80px",}}><img src={ethereum} style={{ width: "50px", height: "50px",}} alt="ethereum"></img>Switch</button>
-            </div>
-            <div>
-                <p>Purchasing NFT for 0.1 eth</p>
-            </div>
-            <div>
-                <button type="button" onClick={test} style={{ width: "100px", height: "80px",}} disabled={(chainId !== defaultChainIdNum) || !active ? true : false} ><img src={svg01} style={{ width: "50px", height: "50px",}} alt="purchase"></img>Purchase</button>
-                <p></p>
-            </div>
-            <div>
-                <p></p>
-                <img src={opensea} style={{ width: "50px", height: "50px",}} alt="opensea" onClick={toOpenSea}></img>
-                <img src={github} style={{ width: "50px", height: "50px",}} alt="github" onClick={toGithub}></img>
-                <img src={etherscan} style={{ width: "50px", height: "50px",}} alt="etherscan" onClick={toEtherscan}></img>
-                <p></p>
-            </div>
-            <div>
                 <img src={svg12} alt="12" width="160px" height="160px" />
                 <img src={svg13} alt="13" width="160px" height="160px" />
                 <img src={svg14} alt="14" width="160px" height="160px" />
@@ -156,6 +133,46 @@ function Connect() {
                 <img src={svg21} alt="21" width="160px" height="160px" />
                 <img src={svg22} alt="22" width="160px" height="160px" />
                 <img src={svg23} alt="23" width="160px" height="160px" />
+            </div>
+            <div>
+                <h1>This page has not been opened yet.</h1>
+                <h1>Blessed Creatures exist in ethereum</h1>
+                <br></br>
+
+                <h3>BCee is pixel PFP NFT project.</h3>
+                <h3>All metadata and images of BCee are fully decentralized and all exist in Ethereum.</h3>
+                <h3>This means BCee do not store the NFT's metadata in an external cloud or ipfs.</h3>
+                <h3>In this contract, there is no authority such as owner, </h3>
+                <h3>and everything is decentralized except for the deployer's primary sale income.</h3>
+                <h3>The total supply of NFT is 1000 and can be obtained through this page.</h3>
+
+                <br></br>
+                <p>{typeof(account) === typeof("") ? `Connected Account : ${account}`: "Connect your wallet using Metamask"}</p>
+            </div>
+            <div>
+                <button type="button"  onClick={handleConnect} style={{ width: "100px", height: "80px", backgroundColor: "white", borderRadius: "10px"}}><img src={metamask} style={{ width: "50px", height: "50px"}} alt="metamask"></img>{active ? 'Disconnect':'Connect'}</button>
+            </div>
+            <div>
+                <p>{(chainId !== defaultChainIdNum) && (typeof(account) === typeof("")) ? `Switch to the Ethereum main network. (current network : ${chainId})` : ""}</p>
+                <p>{(typeof(account) === typeof("")) ? "" : "Not connected"}</p>
+                <p>{(chainId === defaultChainIdNum) ? "Now connected on Ethereum main network!" : ""}</p>
+            </div>
+            <div>
+                <button type="button" onClick={switchChain} disabled={(chainId === defaultChainIdNum) || !active ? true : false} style={{ width: "100px", height: "80px", backgroundColor: "white", borderRadius: "10px"}}><img src={ethereum} style={{ width: "50px", height: "50px"}} alt="ethereum"></img>Switch</button>
+            </div>
+            <div>
+                <p>Purchasing NFT for 0.1 eth</p>
+            </div>
+            <div>
+                <button type="button" onClick={test} style={{ width: "100px", height: "80px", backgroundColor: "white", borderRadius: "10px"}} disabled={(chainId !== defaultChainIdNum) || !active ? true : false} ><img src={svg01} style={{ width: "50px", height: "50px"}} alt="purchase"></img>Purchase</button>
+                <p></p>
+            </div>
+            <div>
+                <br></br>
+                <img src={opensea} style={{ width: "50px", height: "50px",}} alt="opensea" onClick={toOpenSea}></img>
+                <img src={github} style={{ width: "50px", height: "50px",}} alt="github" onClick={toGithub}></img>
+                <img src={etherscan} style={{ width: "50px", height: "50px",}} alt="etherscan" onClick={toEtherscan}></img>
+                <p></p>
             </div>
         </div>
     );
