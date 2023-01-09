@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/BCee-front/static/css/main.073c9b0a.css",
-    "main.js": "/BCee-front/static/js/main.1e0cf895.js",
+    "main.js": "/BCee-front/static/js/main.7865cb8c.js",
     "static/js/787.65818a2d.chunk.js": "/BCee-front/static/js/787.65818a2d.chunk.js",
     "static/media/16.svg": "/BCee-front/static/media/16.5e2bc62c19fb2bf8fc26e5ffe8550baf.svg",
     "static/media/22.svg": "/BCee-front/static/media/22.8f12daa5f7a1aa113ae45bd09b0a393a.svg",
@@ -29,11 +29,11 @@
     "static/media/04.svg": "/BCee-front/static/media/04.cda2feba1bc94768f84e5f4346356dba.svg",
     "index.html": "/BCee-front/index.html",
     "main.073c9b0a.css.map": "/BCee-front/static/css/main.073c9b0a.css.map",
-    "main.1e0cf895.js.map": "/BCee-front/static/js/main.1e0cf895.js.map",
+    "main.7865cb8c.js.map": "/BCee-front/static/js/main.7865cb8c.js.map",
     "787.65818a2d.chunk.js.map": "/BCee-front/static/js/787.65818a2d.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.073c9b0a.css",
-    "static/js/main.1e0cf895.js"
+    "static/js/main.7865cb8c.js"
   ]
 }
