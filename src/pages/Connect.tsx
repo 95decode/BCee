@@ -1,6 +1,7 @@
 import { useWeb3React } from '@web3-react/core';
 import { ethers } from "ethers";
-import ABI from "abi/abi.json";
+import { contractAddress, defaultChainIdNum, defaultChainIdHex } from 'lib/constants';
+import ABI from "abi/ClaimTest.json";
 import injected from 'lib/connectors';
 
 import svg00 from "../images/00.svg";
@@ -55,14 +56,14 @@ function Connect() {
     const switchChain = () => {
         library.provider.request({
             method: "wallet_switchEthereumChain",
-            params: [{chainId: "0x1"}]
+            params: [{chainId: defaultChainIdHex}]
         });
     }
 
     const test = async () => {
         try {
             const contract = getContract();
-            const tx = await contract.A(3);
+            const tx = await contract.test({value:"100000000000000000"});
             const receipt = await tx.wait();
 
             console.log(receipt);
@@ -75,9 +76,9 @@ function Connect() {
 
     const getContract = () => {
         // test contracts
-        let a = "0x44274669d47Ca48b20652a1Da0a9d52B7aa89b92";
-        let b = ABI;
-        return new ethers.Contract(a, b, library.getSigner());
+        let address = contractAddress;
+        let abi = ABI;
+        return new ethers.Contract(address, abi, library.getSigner());
     }
 
     return (
@@ -104,13 +105,13 @@ function Connect() {
             </div>
             <div>
                 <button type="button" onClick={handleConnect}>{active ? 'disconnect':'connect'}</button>
-                <button type="button" onClick={switchChain} disabled={(chainId === 1) || !active ? true : false} >switch</button>
+                <button type="button" onClick={switchChain} disabled={(chainId === defaultChainIdNum) || !active ? true : false} >switch</button>
             </div>
             <div>
-                <p>Contract: 0x44274669d47Ca48b20652a1Da0a9d52B7aa89b92</p>
+                <p>This is for testing.</p>
             </div>
             <div>
-                <button type="button" onClick={test} disabled={(chainId !== 1) || !active ? true : false} >transact</button>
+                <button type="button" onClick={test} disabled={(chainId !== defaultChainIdNum) || !active ? true : false} >Claim</button>
             </div>
             <div>
                 <img src={svg12} alt="12" width="160px" height="160px" />
