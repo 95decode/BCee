@@ -1,8 +1,8 @@
 {
-  "name": "fdcc-front",
+  "name": "bcee",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://95decode.github.io/BCee-front",
+  "homepage": "https://95decode.github.io/BCee",
   "dependencies": {
     "@ethersproject/providers": "^5.7.2",
     "@testing-library/jest-dom": "^5.16.5",
