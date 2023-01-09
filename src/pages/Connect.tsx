@@ -93,7 +93,7 @@ function Connect() {
     }
 
     const toGithub = () => {
-        window.open("https://github.com/95decode/BCee/");
+        window.open("https://github.com/95decode/BCee-contract/");
     }
 
     const toEtherscan = () => {
@@ -120,7 +120,7 @@ function Connect() {
             </div>
             <div>
                 <h1>This page has not been opened yet.</h1>
-                <p>{typeof(account) === typeof("") ? `Connectd Account : ${account}`: "Connect your wallet using Metamask"}</p>
+                <p>{typeof(account) === typeof("") ? `Connected Account : ${account}`: "Connect your wallet using Metamask"}</p>
                 <p>{(chainId !== defaultChainIdNum) && (typeof(account) === typeof("")) ? `Switch to the Ethereum main network. (current network : ${chainId})` : ""}</p>
             </div>
             <div>
