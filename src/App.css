@@ -36,3 +36,14 @@
     transform: rotate(360deg);
   }
 }
+
+@font-face {
+  font-family: "Inter";
+  font-display: fallback;
+
+  src: url("./assets/Inter.ttf") format("truetype"), url("./assets/Inter.woff")
+      format("woff"), url("./assets/Inter.eot?iefix") format("embedded-opentype");
+
+  font-weight: 400;
+  font-style: normal;
+}

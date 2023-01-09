@@ -4,30 +4,37 @@ import { contractAddress, defaultChainIdNum, defaultChainIdHex } from 'lib/const
 import ABI from "abi/ClaimTest.json";
 import injected from 'lib/connectors';
 
-import svg00 from "../images/00.svg";
-import svg01 from "../images/01.svg";
-import svg02 from "../images/02.svg";
-import svg03 from "../images/03.svg";
-import svg04 from "../images/04.svg";
-import svg05 from "../images/05.svg";
-import svg06 from "../images/06.svg";
-import svg07 from "../images/07.svg";
-import svg08 from "../images/08.svg";
-import svg09 from "../images/09.svg";
-import svg10 from "../images/10.svg";
-import svg11 from "../images/11.svg";
-import svg12 from "../images/12.svg";
-import svg13 from "../images/13.svg";
-import svg14 from "../images/14.svg";
-import svg15 from "../images/15.svg";
-import svg16 from "../images/16.svg";
-import svg17 from "../images/17.svg";
-import svg18 from "../images/18.svg";
-import svg19 from "../images/19.svg";
-import svg20 from "../images/20.svg";
-import svg21 from "../images/21.svg";
-import svg22 from "../images/22.svg";
-import svg23 from "../images/23.svg";
+import svg00 from "../assets/00.svg";
+import svg01 from "../assets/01.svg";
+import svg02 from "../assets/02.svg";
+import svg03 from "../assets/03.svg";
+import svg04 from "../assets/04.svg";
+import svg05 from "../assets/05.svg";
+import svg06 from "../assets/06.svg";
+import svg07 from "../assets/07.svg";
+import svg08 from "../assets/08.svg";
+import svg09 from "../assets/09.svg";
+import svg10 from "../assets/10.svg";
+import svg11 from "../assets/11.svg";
+import svg12 from "../assets/12.svg";
+import svg13 from "../assets/13.svg";
+import svg14 from "../assets/14.svg";
+import svg15 from "../assets/15.svg";
+import svg16 from "../assets/16.svg";
+import svg17 from "../assets/17.svg";
+import svg18 from "../assets/18.svg";
+import svg19 from "../assets/19.svg";
+import svg20 from "../assets/20.svg";
+import svg21 from "../assets/21.svg";
+import svg22 from "../assets/22.svg";
+import svg23 from "../assets/23.svg";
+
+import metamask from "../assets/metamaskLogo.png";
+import ethereum from "../assets/ethereum.png";
+//import claim from "../assets/claim.png";
+import opensea from "../assets/opensea.png";
+import github from "../assets/github.png";
+import etherscan from "../assets/etherscan.png";
 
 function Connect() {
     const {
@@ -81,6 +88,18 @@ function Connect() {
         return new ethers.Contract(address, abi, library.getSigner());
     }
 
+    const toOpenSea = () => {
+        window.open("https://opensea.io/");
+    }
+
+    const toGithub = () => {
+        window.open("https://github.com/95decode/BCee/");
+    }
+
+    const toEtherscan = () => {
+        window.open("https://etherscan.io/address/" + contractAddress);
+    }
+
     return (
         <div>
             <div>
@@ -100,18 +119,27 @@ function Connect() {
                 <img src={svg11} alt="11" width="160px" height="160px" />
             </div>
             <div>
-                <p>Account: {account}</p>
-                <p>ChainId: {chainId}</p>
+                <h1>This page has not been opened yet.</h1>
+                <p>{typeof(account) === typeof("") ? `Connectd Account : ${account}`: "Connect your wallet using Metamask"}</p>
+                <p>{(chainId !== defaultChainIdNum) && (typeof(account) === typeof("")) ? `Switch to the Ethereum main network. (current network : ${chainId})` : ""}</p>
             </div>
             <div>
-                <button type="button" onClick={handleConnect}>{active ? 'disconnect':'connect'}</button>
-                <button type="button" onClick={switchChain} disabled={(chainId === defaultChainIdNum) || !active ? true : false} >switch</button>
+                <button type="button" onClick={handleConnect} style={{ width: "100px", height: "80px",}}><img src={metamask} style={{ width: "50px", height: "50px",}} alt="metamask"></img>{active ? 'Disconnect':'Connect'}</button>
+                <button type="button" onClick={switchChain} disabled={(chainId === defaultChainIdNum) || !active ? true : false} style={{ width: "100px", height: "80px",}}><img src={ethereum} style={{ width: "50px", height: "50px",}} alt="ethereum"></img>Switch</button>
             </div>
             <div>
-                <p>This is for testing.</p>
+                <p>Purchasing NFT for 0.1 eth</p>
             </div>
             <div>
-                <button type="button" onClick={test} disabled={(chainId !== defaultChainIdNum) || !active ? true : false} >Claim</button>
+                <button type="button" onClick={test} style={{ width: "100px", height: "80px",}} disabled={(chainId !== defaultChainIdNum) || !active ? true : false} ><img src={svg01} style={{ width: "50px", height: "50px",}} alt="purchase"></img>Purchase</button>
+                <p></p>
+            </div>
+            <div>
+                <p></p>
+                <img src={opensea} style={{ width: "50px", height: "50px",}} alt="opensea" onClick={toOpenSea}></img>
+                <img src={github} style={{ width: "50px", height: "50px",}} alt="github" onClick={toGithub}></img>
+                <img src={etherscan} style={{ width: "50px", height: "50px",}} alt="etherscan" onClick={toEtherscan}></img>
+                <p></p>
             </div>
             <div>
                 <img src={svg12} alt="12" width="160px" height="160px" />
