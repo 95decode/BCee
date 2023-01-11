@@ -1,7 +1,7 @@
 import { useWeb3React } from '@web3-react/core';
 import { ethers } from "ethers";
 import { contractAddress, defaultChainIdNum, defaultChainIdHex } from 'lib/constants';
-import ABI from "abi/ClaimTest.json";
+import ABI from "abi/BCee.json";
 import injected from 'lib/connectors';
 
 import svg00 from "../assets/00.svg";
@@ -31,7 +31,6 @@ import svg23 from "../assets/23.svg";
 
 import metamask from "../assets/metamaskLogo.png";
 import ethereum from "../assets/ethereum.png";
-//import claim from "../assets/claim.png";
 import opensea from "../assets/opensea.png";
 import github from "../assets/github.png";
 import etherscan from "../assets/etherscan.png";
@@ -67,7 +66,7 @@ function Connect() {
         });
     }
 
-    const test = async () => {
+    const claim = async () => {
         try {
             const contract = getContract();
             const tx = await contract.test({value:"100000000000000000"});
@@ -82,14 +81,13 @@ function Connect() {
     }
 
     const getContract = () => {
-        // test contracts
         let address = contractAddress;
         let abi = ABI;
         return new ethers.Contract(address, abi, library.getSigner());
     }
 
     const toOpenSea = () => {
-        window.open("https://opensea.io/");
+        window.open("https://opensea.io/collection/blessedcreatures/");
     }
 
     const toGithub = () => {
@@ -135,7 +133,6 @@ function Connect() {
                 <img src={svg23} alt="23" width="160px" height="160px" />
             </div>
             <div>
-                <h1>This page has not been opened yet.</h1>
                 <h1>Blessed Creatures exist in ethereum</h1>
                 <br></br>
 
@@ -164,7 +161,7 @@ function Connect() {
                 <p>Purchasing NFT for 0.1 eth</p>
             </div>
             <div>
-                <button type="button" onClick={test} style={{ width: "100px", height: "80px", backgroundColor: "white", borderRadius: "10px"}} disabled={(chainId !== defaultChainIdNum) || !active ? true : false} ><img src={svg01} style={{ width: "50px", height: "50px"}} alt="purchase"></img>Purchase</button>
+                <button type="button" onClick={claim} style={{ width: "100px", height: "80px", backgroundColor: "white", borderRadius: "10px"}} disabled={(chainId !== defaultChainIdNum) || !active ? true : false} ><img src={svg01} style={{ width: "50px", height: "50px"}} alt="purchase"></img>Purchase</button>
                 <p></p>
             </div>
             <div>
